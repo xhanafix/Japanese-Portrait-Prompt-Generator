@@ -53,6 +53,19 @@
         .copy-btn:hover {
             background-color: #0056b3;
         }
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .random-btn {
+            background-color: #9c27b0;
+        }
+        
+        .random-btn:hover {
+            background-color: #7b1fa2;
+        }
     </style>
 </head>
 <body>
@@ -63,7 +76,8 @@
             <div>
                 <label for="age">Age Range:</label>
                 <select id="age">
-                    <option value="young">Young (18-25)</option>
+                    <option value="teen">Teen (18-20)</option>
+                    <option value="young">Young (20-25)</option>
                     <option value="mature">Mature (25-35)</option>
                 </select>
             </div>
@@ -74,6 +88,8 @@
                     <option value="long">Long</option>
                     <option value="medium">Medium</option>
                     <option value="short">Short</option>
+                    <option value="wavy">Wavy</option>
+                    <option value="updo">Updo</option>
                 </select>
             </div>
             
@@ -83,6 +99,8 @@
                     <option value="black">Black</option>
                     <option value="brown">Brown</option>
                     <option value="auburn">Auburn</option>
+                    <option value="dark brown">Dark Brown</option>
+                    <option value="burgundy">Burgundy</option>
                 </select>
             </div>
             
@@ -92,13 +110,40 @@
                     <option value="gentle">Gentle Smile</option>
                     <option value="serious">Serious</option>
                     <option value="happy">Happy</option>
+                    <option value="thoughtful">Thoughtful</option>
+                    <option value="candid">Candid</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="style">Style:</label>
+                <select id="style">
+                    <option value="casual">Casual</option>
+                    <option value="formal">Formal</option>
+                    <option value="traditional">Traditional</option>
+                    <option value="business">Business</option>
+                    <option value="artistic">Artistic</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="lighting">Lighting:</label>
+                <select id="lighting">
+                    <option value="studio">Studio</option>
+                    <option value="natural">Natural</option>
+                    <option value="dramatic">Dramatic</option>
+                    <option value="soft">Soft</option>
+                    <option value="moody">Moody</option>
                 </select>
             </div>
         </div>
 
-        <button onclick="generatePrompt()">Generate Prompt</button>
+        <div class="button-group">
+            <button onclick="generatePrompt()">Generate Prompt</button>
+            <button onclick="randomizeOptions()" class="random-btn">Randomize</button>
+            <button class="copy-btn" onclick="copyPrompt()">Copy Prompt</button>
+        </div>
         <div id="promptOutput"></div>
-        <button class="copy-btn" onclick="copyPrompt()">Copy Prompt</button>
     </div>
     <script src="script.js"></script>
 </body>
