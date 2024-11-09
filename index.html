@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japanese Portrait Prompt Generator</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        select, button {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #promptOutput {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            min-height: 100px;
+        }
+        .copy-btn {
+            background-color: #007bff;
+            margin-top: 10px;
+        }
+        .copy-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Japanese Portrait Prompt Generator</h1>
+        
+        <div class="options">
+            <div>
+                <label for="age">Age Range:</label>
+                <select id="age">
+                    <option value="young">Young (18-25)</option>
+                    <option value="mature">Mature (25-35)</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="hairStyle">Hair Style:</label>
+                <select id="hairStyle">
+                    <option value="long">Long</option>
+                    <option value="medium">Medium</option>
+                    <option value="short">Short</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="hairColor">Hair Color:</label>
+                <select id="hairColor">
+                    <option value="black">Black</option>
+                    <option value="brown">Brown</option>
+                    <option value="auburn">Auburn</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="expression">Expression:</label>
+                <select id="expression">
+                    <option value="gentle">Gentle Smile</option>
+                    <option value="serious">Serious</option>
+                    <option value="happy">Happy</option>
+                </select>
+            </div>
+        </div>
+
+        <button onclick="generatePrompt()">Generate Prompt</button>
+        <div id="promptOutput"></div>
+        <button class="copy-btn" onclick="copyPrompt()">Copy Prompt</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
